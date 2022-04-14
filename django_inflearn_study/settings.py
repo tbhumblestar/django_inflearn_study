@@ -1,5 +1,6 @@
 #settings.py
 from pathlib import Path
+import os
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'instagram',
+    'blog1',
 ]
 
 MIDDLEWARE = [
@@ -46,7 +48,9 @@ ROOT_URLCONF = 'django_inflearn_study.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'django_inflearn_study','templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

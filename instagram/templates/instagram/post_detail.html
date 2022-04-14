@@ -1,0 +1,31 @@
+<h2>Author:{{ post.author }} </h2>
+
+{% if post.photo %}
+    <div>
+    <img src="{{ post.photo.url }}" />
+    </div>
+{% endif %}
+{{ post.message }}
+{% comment %} <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram / Post_list</title>
+</head>
+<body>
+    <form action="" method="get">
+        <input type="text" name="q" value="{{q}}"/>
+        <input type="submit" value = "검색"/>
+    </form>
+
+    {% for post in post_list %}
+        {{ post.message }}
+        {% if post.photo %}
+            <img src="{{ post.photo.url }}" style="width:200px"/>
+        {% else %}
+            No Photo
+        {% endif %}
+        <br>
+    {% endfor %}
+</body>
+</html> {% endcomment %}
